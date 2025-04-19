@@ -1,0 +1,31 @@
+" .ideavimrc for Rider
+
+let mapleader=" "
+nnoremap <space> <Nop>
+inoremap jj <Esc>
+
+Plug 'machakann/vim-highlightedyank'
+
+" General
+set number
+set relativenumber
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set scrolloff=8
+set timeoutlen=500
+set clipboard=unnamed
+
+" Selection and Clipboard
+nnoremap <leader>a ggVG
+nnoremap <leader>y Vy
+
+" Normal mode
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>k :bn<CR>
+nnoremap <leader>q :bdelete<CR>
+nnoremap <leader>b :buffer<Space> 
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>W :wq<CR>

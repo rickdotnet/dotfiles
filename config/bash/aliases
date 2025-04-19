@@ -1,0 +1,12 @@
+alias dot='cd ~/dotfiles'
+alias rick='cd ~'
+
+alias dps="docker ps"
+alias ds="docker service"
+
+alias ipp="ip address | grep -o \"inet 192.*/\" | awk '{ print \$2 }' | tr / ' ' | xargs"
+alias nano="nvim"
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
