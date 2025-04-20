@@ -18,6 +18,8 @@ set timeoutlen=500
 set clipboard=unnamed
 
 " Selection and Clipboard
+noremap <C-c> y
+noremap <C-v> p
 nnoremap <leader>a ggVG
 nnoremap <leader>y Vy
 
