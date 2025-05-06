@@ -7,32 +7,10 @@ namespace Rick.Cli.Services;
 
 public class YoloInstaller
 {
-    public static async Task FreshInstall()
+    public static async Task UserInstall()
     {
-        Console.WriteLine("Starting Arch Linux YOLO installation...");
-        
-        // Install paru
-        await Command.RunAsync("pacman", "-S --needed base-devel git --noconfirm");
         await Command.RunAsync("bash", "-c \"git clone https://aur.archlinux.org/paru.git /tmp/paru && cd /tmp/paru && makepkg -si --noconfirm\"");
-
-        // Wayland and desktop packages
-        await Command.RunAsync("pacman", "-S libnotify hyprpicker wl-clipboard grim slurp rofi-wayland noto-fonts-emoji ttf-jetbrains-mono-nerd waybar --noconfirm");
-
-        // AUR packages via paru
         await Command.RunAsync("paru", "-S  grimblast-git --noconfirm");
-
-        // CLI and utility tools
-        await Command.RunAsync("pacman", "-S ghostty yazi ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick --noconfirm");
-
-        // development tools
-        await Command.RunAsync("pacman", "-S dotnet-sdk --noconfirm");
-
-        // credential management
-        await Command.RunAsync("pacman", "-S gnome-keyring libsecret --noconfirm");
-
-        // applications
-        await Command.RunAsync("pacman", "-S discord flatpak --noconfirm");
-
 
         Console.WriteLine("Copying configs to ~/.config...");
 
@@ -53,10 +31,22 @@ public class YoloInstaller
         var sourceIdeavimrc = Path.Combine(configDir, "vim", ".ideavimrc");
         var targetIdeavimrc = Path.Combine(homeDir, ".ideavimrc");
         CreateSymlink(sourceIdeavimrc, targetIdeavimrc);
-        
-        var sourceBashrc = Path.Combine(configDir, "vim", ".bashrc");
+
+        var sourceBashrc = Path.Combine(configDir, "bash", ".bashrc");
         var targetBashrc = Path.Combine(homeDir, ".bashrc");
         CreateSymlink(sourceBashrc, targetBashrc);
+    }
+
+    public static async Task SudoInstall()
+    {
+        Console.WriteLine("Starting YOLO install");
+
+        await Command.RunAsync("pacman", "-S --needed base-devel git --noconfirm");
+        await Command.RunAsync("pacman", "-S libnotify hyprpicker wl-clipboard grim slurp rofi-wayland noto-fonts-emoji ttf-jetbrains-mono-nerd waybar --noconfirm");
+        await Command.RunAsync("pacman", "-S ghostty yazi ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick --noconfirm");
+        await Command.RunAsync("pacman", "-S dotnet-sdk --noconfirm");
+        await Command.RunAsync("pacman", "-S gnome-keyring libsecret --noconfirm");
+        await Command.RunAsync("pacman", "-S discord flatpak --noconfirm");
     }
 
     private static void CreateSymlink(string sourcePath, string targetPath)
