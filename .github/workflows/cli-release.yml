@@ -8,7 +8,7 @@ on:
 
 env:
   DOCKER_REGISTRY: "ghcr.io"
-  PROJECT_FILE: ./src/cli/Rick/Cli/Cli.csproj
+  PROJECT_FILE: ./src/cli/Cli/Cli.csproj
   VERSION: "0.0.${{ github.run_number }}"
 
 jobs:
