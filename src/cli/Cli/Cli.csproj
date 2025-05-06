@@ -5,8 +5,8 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Rick.Cli</RootNamespace>
-        <AssemblyName>rick</AssemblyName>
+        <RootNamespace>Architect.Cli</RootNamespace>
+        <AssemblyName>architect</AssemblyName>
         <Company>rickdotnet</Company>
         <Product>Rick CLI</Product>
     </PropertyGroup>

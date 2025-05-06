@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 using Serilog;
 using Serilog.Events;
 
-namespace Rick.Cli;
+namespace Architect.Cli;
 
 public static class Startup
 {

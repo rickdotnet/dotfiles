@@ -1,9 +1,6 @@
 using SimpleExec;
-using System.IO;
-using System.IO.Compression;
-using System.Net.Http;
 
-namespace Rick.Cli.Services;
+namespace Architect.Cli.Services;
 
 public class YoloInstaller
 {

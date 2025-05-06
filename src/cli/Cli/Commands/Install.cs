@@ -1,6 +1,6 @@
 using ConsoleAppFramework;
 
-namespace Rick.Cli.Commands;
+namespace Architect.Cli.Commands;
 
 public class Install
 {

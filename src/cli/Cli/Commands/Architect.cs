@@ -1,8 +1,7 @@
-using System.Reflection;
+using Architect.Cli.Services;
 using ConsoleAppFramework;
-using Rick.Cli.Services;
 
-namespace Rick.Cli.Commands;
+namespace Architect.Cli.Commands;
 
 /// <summary>
 /// We know one thing... YOLO.

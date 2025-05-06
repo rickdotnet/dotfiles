@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Architect.Cli.Commands;
+using Microsoft.Extensions.Hosting;
 using ConsoleAppFramework;
-using Rick.Cli.Commands;
 using SimpleExec;
 
 // will launch into the CLI using various flags
@@ -13,7 +13,7 @@ using SimpleExec;
 // hosts are created
 var app = ConsoleApp.Create();
 app.Add("", ()=> Console.WriteLine("Hello World!"));
-app.Add<Architect>("architect");
+app.Add<Architect.Cli.Commands.Architect>("architect");
 app.Add<Install>("install");
 app.Run(args);
 
