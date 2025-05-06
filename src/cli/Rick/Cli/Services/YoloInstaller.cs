@@ -11,15 +11,15 @@ public class YoloInstaller
     {
         Console.WriteLine("Starting Arch Linux YOLO installation...");
         
-        // Install paru
-        await Command.RunAsync("pacman", "-S --needed base-devel git --noconfirm");
-        await Command.RunAsync("bash", "-c \"git clone https://aur.archlinux.org/paru.git /tmp/paru && cd /tmp/paru && makepkg -si --noconfirm\"");
-
+        // // Install paru
+        // await Command.RunAsync("pacman", "-S --needed base-devel git --noconfirm");
+        // await Command.RunAsync("bash", "-c \"git clone https://aur.archlinux.org/paru.git /tmp/paru && cd /tmp/paru && makepkg -si --noconfirm\"");
+        //
         // Wayland and desktop packages
         await Command.RunAsync("pacman", "-S libnotify hyprpicker wl-clipboard grim slurp rofi-wayland noto-fonts-emoji ttf-jetbrains-mono-nerd waybar --noconfirm");
 
         // AUR packages via paru
-        await Command.RunAsync("paru", "-S  grimblast-git --noconfirm");
+        // await Command.RunAsync("paru", "-S  grimblast-git --noconfirm");
 
         // CLI and utility tools
         await Command.RunAsync("pacman", "-S ghostty yazi ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick --noconfirm");
