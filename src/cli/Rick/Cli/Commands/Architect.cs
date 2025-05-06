@@ -13,13 +13,19 @@ public class Architect
     /// Caution.
     /// </summary>
     /// <param name="yolo">Chad mode</param>
+    /// <param name="user">User mode</param>
     [Command(" ")]
-    public async Task Run(bool yolo = false)
+    public async Task Run(bool yolo = false, bool user = false)
     {
         if (yolo)
         {
             Console.WriteLine("YOLO!!");
-            await YoloInstaller.FreshInstall();
+            await YoloInstaller.SudoInstall();
+        }
+
+        if (user)
+        {
+            await YoloInstaller.UserInstall();
         }
         else
         {
