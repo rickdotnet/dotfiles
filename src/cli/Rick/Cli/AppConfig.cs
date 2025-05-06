@@ -1,4 +1,4 @@
-namespace Cli;
+namespace Rick.Cli;
 
 public record AppConfig
 {
